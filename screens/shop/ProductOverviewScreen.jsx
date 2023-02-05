@@ -1,14 +1,28 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { FlatList } from "react-native";
+import ProductItem from "../../components/Shop/ProductItem";
+import { useSelector } from "react-redux";
 
-const ProductOverviewScreen = () => {
+const ProductOverviewScreen = ({ navigation }) => {
+  const products = useSelector((state) => state.product.availableProducts);
+  const { navigate } = navigation;
+
   return (
-    <View>
-      <Text>ProductOverviewScreen</Text>
-    </View>
+    <FlatList
+      data={products}
+      keyExtractor={(item) => item.id}
+      renderItem={(itemData) => (
+        <ProductItem
+          data={itemData}
+          onViewDetails={() =>
+            navigate("Product Details", {
+              id: itemData.item.id,
+              title: itemData.item.title,
+            })
+          }
+        />
+      )}
+    />
   );
 };
 
 export default ProductOverviewScreen;
-
-const styles = StyleSheet.create({});
