@@ -4,7 +4,7 @@ const cartSlice = createSlice({
     name: "cart",
     initialState: {
         items: [],
-        totalAmount: 0
+        totalAmount: 0.00
     },
     reducers: {
         addToCart: (state, action) => {
@@ -20,16 +20,28 @@ const cartSlice = createSlice({
 
                     return item
                 })
-                state.totalAmount += product.price
+                state.totalAmount += Math.floor(product.price)
             } else {
                 const newProduct = { ...product, quantity: 1 }
                 state.items.push(newProduct)
-                state.totalAmount += product.price
+                state.totalAmount += Math.floor(product.price)
             }
+        },
+        removeFromCart: (state, action) => {
+            const product = action.payload;
+            if (product) {
+                const amount = Math.floor(product.price) * product.quantity
+                state.totalAmount = state.totalAmount - amount
+                state.items = state.items.filter(item => item.id !== product.id)
+            }
+        },
+        clearCart: (state) => {
+            state.items = []
+            state.totalAmount = 0.00
         }
     }
 });
 
-export const { addToCart } = cartSlice.actions
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions
 
 export default cartSlice.reducer;

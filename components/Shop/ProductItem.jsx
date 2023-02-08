@@ -9,12 +9,15 @@ import {
 } from "react-native";
 import CButton from "../CButton";
 import { colors } from "../../constants/colors";
-import { addToCart } from "../../store/cartSlice";
-import { useDispatch } from "react-redux";
 
-const ProductItem = ({ data, onViewDetails }) => {
+const ProductItem = ({
+  data,
+  rightButtonFunctionality,
+  leftButtonFunctionality,
+  rightButtonTitle,
+  leftButtonTitle,
+}) => {
   const { title, imageUrl, price } = data.item;
-  const dispatch = useDispatch();
 
   let TouchableCM = TouchableOpacity;
 
@@ -24,7 +27,7 @@ const ProductItem = ({ data, onViewDetails }) => {
 
   return (
     <View style={styles.card}>
-      <TouchableCM useForeground onPress={onViewDetails}>
+      <TouchableCM useForeground onPress={rightButtonFunctionality}>
         <View>
           <Image style={styles.image} source={{ uri: imageUrl }} />
           <View style={styles.body}>
@@ -35,14 +38,14 @@ const ProductItem = ({ data, onViewDetails }) => {
             <View style={styles.buttonContainer}>
               <CButton
                 styles={styles.button}
-                title="View Details"
+                title={rightButtonTitle}
                 color={Platform.OS === "android" ? colors.red : ""}
-                onPress={onViewDetails}
+                onPress={rightButtonFunctionality}
               />
               <CButton
                 styles={styles.button}
-                title="Add To Cart"
-                onPress={() => dispatch(addToCart(data.item))}
+                title={leftButtonTitle}
+                onPress={leftButtonFunctionality}
                 color={Platform.OS === "android" ? colors.red : ""}
               />
             </View>

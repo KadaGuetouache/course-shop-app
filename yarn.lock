@@ -7377,6 +7377,11 @@ update-notifier@^2.1.0:
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
 
+urid@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/urid/-/urid-1.1.0.tgz#bb240eb56523e64e91100d4c0eefcf98ad9dab60"
+  integrity sha512-8fBzDnX60oq4B0ZXlNVjFBx4NY/kotJ0GmgCcdC64BgaDBwvyqyDka8rLHsT/dcgjFL8rffkhKgOAdQlnkEwLA==
+
 urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"

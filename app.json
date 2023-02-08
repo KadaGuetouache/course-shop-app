@@ -3,6 +3,7 @@
     "name": "course-shop-app",
     "slug": "course-shop-app",
     "version": "1.0.0",
+    "jsEngine": "hermes",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -19,16 +20,29 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "jsEngine": "jsc"
+      "jsEngine": "jsc",
+      "bundleIdentifier": "yyy",
+      "buildNumber": "4"
     },
     "android": {
+      "preview": {
+        "android": {
+          "buildType": "apk"
+        }
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.kada0079.courseshopapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0434a3ba-ac8d-49cd-af06-8eba1e29a094"
+      }
     }
   }
 }

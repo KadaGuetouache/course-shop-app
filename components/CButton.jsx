@@ -1,16 +1,36 @@
-import { StyleSheet, Button, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { useState } from "react";
+import { colors } from "../constants/colors";
 import React from "react";
 
-const CButton = ({ title, onPress = () => {}, cstyles, color }) => {
+const CButton = ({ title, onPress = () => {}, cstyles, color, disabled }) => {
+  const [buttonState, setButtonState] = useState(disabled);
   return (
-    <View style={{ ...styles.buttonContainer, ...cstyles }}>
-      <Button title={title} onPress={onPress} color={color} />
-    </View>
+    <TouchableOpacity onPress={onPress} disabled={disabled}>
+      <View
+        style={{
+          ...styles.buttonContainer,
+          backgroundColor: disabled ? "lightgray" : color,
+        }}
+      >
+        <Text style={styles.text}>{title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
 export default CButton;
 
 const styles = StyleSheet.create({
-  buttonContainer: {},
+  buttonContainer: {
+    borderRadius: 30,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    minWidth: 100,
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  text: {
+    color: "white",
+  },
 });
