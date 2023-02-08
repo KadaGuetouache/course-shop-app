@@ -3,7 +3,6 @@
     "name": "course-shop-app",
     "slug": "course-shop-app",
     "version": "1.0.0",
-    "jsEngine": "hermes",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

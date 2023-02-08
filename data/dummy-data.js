@@ -37,7 +37,7 @@ const PRODUCTS = [
         "id": 'p5',
         "ownerId": 'u3',
         "title": 'Men\'s Warm Water-Repellent Hiking Trousers - SH100 ULTRA-WARM',
-        "title": 'https://contents.mediadecathlon.com/p1927253/6b29fecf94c04d253bb4769b635fb377/p1927253.jpg?format=auto&quality=70&f=650x0',
+        "imageUrl": "https://contents.mediadecathlon.com/p1927253/6b29fecf94c04d253bb4769b635fb377/p1927253.jpg?format=auto&quality=70&f=650x0",
         "description": 'Perfect trousers for hiking in extremely cold weather. Extremely warm fleece inner and water-repellent outer fabric will give you comfort.',
         "price": 2299.99
     },

@@ -41,7 +41,7 @@ export default ProductDetailScreen;
 const styles = StyleSheet.create({
   image: {
     width: "100%",
-    height: 300,
+    height: 450,
   },
   body: {
     marginTop: 50,

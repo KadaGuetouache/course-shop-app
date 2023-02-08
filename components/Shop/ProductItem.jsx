@@ -28,7 +28,7 @@ const ProductItem = ({
   return (
     <View style={styles.card}>
       <TouchableCM useForeground onPress={rightButtonFunctionality}>
-        <View>
+        <View style={styles.cardBody}>
           <Image style={styles.image} source={{ uri: imageUrl }} />
           <View style={styles.body}>
             <View style={styles.textContainer}>
@@ -73,9 +73,13 @@ const styles = StyleSheet.create({
     margin: 10,
     backgroundColor: colors.ghostwhite,
   },
+  cardBody: {
+    backgroundColor: "white",
+  },
   image: {
     width: "100%",
-    height: 150,
+    height: 250,
+    resizeMode: "contain",
   },
   body: {
     paddingHorizontal: 30,
