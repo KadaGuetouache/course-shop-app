@@ -70,6 +70,7 @@ const EditProductScreen = ({ navigation }) => {
           <TextInput
             style={styles.input}
             value={title}
+            autoCorrect
             onChangeText={(text) => setTitle(text)}
           />
         </View>
@@ -78,6 +79,7 @@ const EditProductScreen = ({ navigation }) => {
           <TextInput
             style={styles.input}
             value={description}
+            autoCorrect
             onChangeText={(text) => setDescription(text)}
           />
         </View>
@@ -94,6 +96,7 @@ const EditProductScreen = ({ navigation }) => {
           <TextInput
             style={styles.input}
             value={price}
+            keyboardType="decimal-pad"
             onChangeText={(text) => setPrice(text)}
           />
         </View>

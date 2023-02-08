@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   productTitle: {
+    width: 200,
     fontWeight: "bold",
     fontSize: 15,
   },
